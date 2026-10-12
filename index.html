@@ -44,7 +44,7 @@ h2:before,h2:after{content:"";height:1px;flex:1;background:linear-gradient(270de
 h2:after{background:linear-gradient(90deg,transparent,var(--line))}
 
 /* payment card */
-.card{position:relative;border-radius:24px;padding:20px 18px 8px;color:var(--dark);overflow:hidden;scroll-margin-top:16px;background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 22%,var(--g3) 48%,var(--g4) 70%,#b08428 100%);box-shadow:0 20px 50px -15px rgba(217,180,74,.4),0 2px 0 rgba(255,255,255,.55) inset,0 -2px 0 rgba(0,0,0,.18) inset}
+.card{position:relative;border-radius:24px;padding:20px 18px 18px;color:var(--dark);overflow:hidden;scroll-margin-top:16px;background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 22%,var(--g3) 48%,var(--g4) 70%,#b08428 100%);box-shadow:0 20px 50px -15px rgba(217,180,74,.4),0 2px 0 rgba(255,255,255,.55) inset,0 -2px 0 rgba(0,0,0,.18) inset;margin-bottom:12px}
 .card:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.07) 0 2px,transparent 2px 8px),radial-gradient(120% 90% at 100% 0,rgba(255,255,255,.35),transparent 55%);pointer-events:none}
 .card:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.65) 50%,transparent 65%);transform:translateX(-130%);animation:sh 1.9s .7s ease-out 1 forwards;pointer-events:none}
 @keyframes sh{to{transform:translateX(130%)}}
@@ -55,19 +55,14 @@ h2:after{background:linear-gradient(90deg,transparent,var(--line))}
 .chip:before{content:"";position:absolute;inset:6px 8px;border:1.5px solid rgba(26,20,8,.45);border-radius:3px}
 .chipw svg{width:22px;height:22px;opacity:.7;transform:rotate(90deg)}
 .brand{font-family:"Reem Kufi",serif;font-weight:700;font-size:20px}
-.lbl{margin:16px 0 3px;font-size:13px;font-weight:500;opacity:.72}
-.hd{direction:ltr;text-align:left;font-weight:700;font-size:clamp(13px,4vw,17px);word-break:break-all;line-height:1.35;text-shadow:0 1px 0 rgba(255,255,255,.55),0 -1px 0 rgba(0,0,0,.18)}
-.pay{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px 0 12px;padding:14px;border-radius:14px;background:var(--dark);color:var(--g2);text-decoration:none;font-weight:700;font-size:16px;box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
+.pay{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 0;padding:14px;border-radius:14px;background:var(--dark);color:var(--g2);text-decoration:none;font-weight:700;font-size:16px;box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
 .pay svg{width:18px;height:18px;stroke-width:2}
 
-/* Dropdown / Accordion for Wallets */
-.dropdown-container{border-top:1px solid rgba(26,20,8,.22);margin-top:12px}
-.dropdown-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 0;background:none;border:none;color:var(--dark);font-family:"Tajawal",Tahoma,sans-serif;font-weight:700;font-size:16px;cursor:pointer;text-align:right}
-.dropdown-btn svg{width:18px;height:18px;transition:transform .3s ease;margin-right:auto}
-.dropdown-content{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
-.dropdown-content.open{max-height:280px}
-
-.w{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(26,20,8,.15)}
+/* Separate Wallet Card */
+.wallet-card{position:relative;border-radius:24px;padding:18px;color:var(--dark);overflow:hidden;background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 22%,var(--g3) 48%,var(--g4) 70%,#b08428 100%);box-shadow:0 20px 50px -15px rgba(217,180,74,.4),0 2px 0 rgba(255,255,255,.55) inset,0 -2px 0 rgba(0,0,0,.18) inset}
+.wallet-header{display:flex;align-items:center;justify-content:space-between;font-family:"Reem Kufi",serif;font-weight:700;font-size:20px;margin-bottom:12px;border-bottom:1px solid rgba(26,20,8,.2);padding-bottom:10px}
+.w{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(26,20,8,.12)}
+.w:first-of-type{border-top:none;padding-top:0}
 .num{direction:ltr;font-family:"Reem Kufi",Tahoma,serif;font-weight:700;font-size:19px;line-height:1.1;letter-spacing:.04em;text-shadow:0 1px 0 rgba(255,255,255,.5),0 -1px 0 rgba(0,0,0,.16)}
 .w small{display:block;font-size:11.5px;font-weight:500;opacity:.75;margin-top:2px}
 .cp{flex:none;width:38px;height:38px;display:grid;place-items:center;border:1.5px solid var(--dark);background:rgba(255,255,255,.18);color:var(--dark);border-radius:10px;cursor:pointer;padding:0}
@@ -130,30 +125,29 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--g2);outline-offset:
 </header>
 
 <h2>الدفع</h2>
-<section class="card" id="pay" aria-label="الدفع">
+
+<!-- InstaPay Card -->
+<section class="card" aria-label="انستاباي">
 <div class="ct">
 <div class="chipw"><span class="chip" aria-hidden="true"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8.5a5 5 0 0 1 0 7M11.5 6a8.5 8.5 0 0 1 0 12M15 3.5a12 12 0 0 1 0 17"/></svg></div>
 <span class="brand">انستاباي</span>
 </div>
-<p class="lbl">عنوان الدفع</p>
-<div class="hd">mohamed.ahmed424161@instapay</div>
 <a class="pay" href="https://ipn.eg/S/mohamed.ahmed424161/instapay/3hr1LX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>ادفع الآن بالانستاباي</a>
+</section>
 
-<div class="dropdown-container">
-<button class="dropdown-btn" id="walletToggle" aria-expanded="false">
-<span>المحفظة</span>
-<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-</button>
-<div class="dropdown-content" id="walletContent">
-<div class="w">
-<div><div class="num">0122 885 5105</div><small>فودافون كاش (م*** ن**)</small></div>
-<button class="cp" data-c="01228855105" aria-label="نسخ رقم فودافون كاش"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button>
+<!-- Separate Wallet Card -->
+<section class="wallet-card" aria-label="المحافظ الإلكترونية">
+<div class="wallet-header">
+<span>المحافظ الإلكترونية</span>
+<svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M21 4H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM16 12h-4v4h4v-4z"/></svg>
 </div>
 <div class="w">
 <div><div class="num">0100 993 4519</div><small>أورنج كاش (ا*** ن***)</small></div>
 <button class="cp" data-c="01009934519" aria-label="نسخ رقم أورنج كاش"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button>
 </div>
-</div>
+<div class="w">
+<div><div class="num">0122 885 5105</div><small>فودافون كاش (م*** ن**)</small></div>
+<button class="cp" data-c="01228855105" aria-label="نسخ رقم فودافون كاش"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></button>
 </div>
 </section>
 
@@ -187,15 +181,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--g2);outline-offset:
 (function(){
 var REVIEW_URL='https://search.google.com/local/writereview?placeid=ChIJlclRKgAVWBQRolLmKl3vIIw';
 var rv=document.getElementById('rv');if(REVIEW_URL&&rv){rv.href=REVIEW_URL;}
-
-// Wallet Dropdown Toggle
-var toggle=document.getElementById('walletToggle');
-var content=document.getElementById('walletContent');
-toggle.addEventListener('click', function(){
-var isOpen = content.classList.toggle('open');
-toggle.setAttribute('aria-expanded', isOpen);
-toggle.querySelector('svg').style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-});
 
 var t=document.getElementById('t'),tm;
 function ok(){t.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('on')},1600)}
