@@ -77,7 +77,7 @@ h2:after{background:linear-gradient(90deg,transparent,var(--line))}
 .ic svg{width:23px;height:23px;stroke-width:1.9}
 .tt b{display:block;font-weight:500;font-size:14px;color:var(--muted)}
 .tt span{display:block;direction:ltr;text-align:right;font-family:"Reem Kufi",Tahoma,serif;font-weight:600;font-size:21px;line-height:1.25;color:var(--g2)}
-.tt span.t{direction:rtl;font-family:"Tajawal",Tahoma,sans-serif;font-weight:700;font-size:15px;line-height:1.4}
+.tt span.t{direction:rtl;font-family:"Tajawal",Tahoma,sans-serif;font-weight:700;font-size:16px}
 .row{flex-direction:row;align-items:center;gap:14px}
 .row .tt{flex:1}
 .row>svg.ar{width:22px;height:22px;color:var(--g3);flex:none}
@@ -189,4 +189,11 @@ toggle.querySelector('svg').style.transform = isOpen ? 'rotate(180deg)' : 'rotat
 });
 
 var t=document.getElementById('t'),tm;
-function ok(){t.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('on
+function ok(){t.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('on')},1600)}
+function fb(v){var a=document.createElement('textarea');a.value=v;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()}
+[].forEach.call(document.querySelectorAll('.cp'),function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-c');
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(ok,function(){fb(v)})}else{fb(v)}})});
+})();
+</script>
+</body>
+</html>
