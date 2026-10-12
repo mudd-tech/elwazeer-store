@@ -19,12 +19,12 @@ main{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:calc(14px
 svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* hero */
-.hero{position:relative;height:260px;display:grid;place-items:center}
-.hero i{position:absolute;border-radius:50%;left:50%;top:45%;transform:translate(-50%,-50%)}
-.r1{width:220px;height:220px;border:1px solid rgba(217,180,74,.38)}
-.r2{width:260px;height:260px;border:1px dashed rgba(217,180,74,.16);max-width:92vw;max-height:92vw}
-.glow{width:220px;height:220px;background:radial-gradient(circle,rgba(217,180,74,.34),transparent 66%)}
-.hero img{position:relative;width:160px;max-width:50vw;height:auto;mix-blend-mode:screen;animation:rise 1s ease-out both}
+.hero{position:relative;height:340px;display:grid;place-items:center}
+.hero i{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.r1{width:290px;height:290px;border:1px solid rgba(217,180,74,.38)}
+.r2{width:338px;height:338px;border:1px dashed rgba(217,180,74,.16);max-width:92vw;max-height:92vw}
+.glow{width:300px;height:300px;background:radial-gradient(circle,rgba(217,180,74,.34),transparent 66%)}
+.hero img{position:relative;width:236px;max-width:62vw;height:auto;mix-blend-mode:screen;animation:rise 1s ease-out both}
 @keyframes rise{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 
 /* store branding under logo */
@@ -77,7 +77,7 @@ h2:after{background:linear-gradient(90deg,transparent,var(--line))}
 .ic svg{width:23px;height:23px;stroke-width:1.9}
 .tt b{display:block;font-weight:500;font-size:14px;color:var(--muted)}
 .tt span{display:block;direction:ltr;text-align:right;font-family:"Reem Kufi",Tahoma,serif;font-weight:600;font-size:21px;line-height:1.25;color:var(--g2)}
-.tt span.t{direction:rtl;font-family:"Tajawal",Tahoma,sans-serif;font-weight:700;font-size:16px}
+.tt span.t{direction:rtl;font-family:"Tajawal",Tahoma,sans-serif;font-weight:700;font-size:15px;line-height:1.4}
 .row{flex-direction:row;align-items:center;gap:14px}
 .row .tt{flex:1}
 .row>svg.ar{width:22px;height:22px;color:var(--g3);flex:none}
@@ -154,7 +154,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--g2);outline-offset:
 <a class="tile" href="https://wa.me/201228855105" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.5 9.5c.3 2 2 3.7 4 4l1.2-1.2-1.7-1-.8.6c-.7-.3-1.3-.9-1.6-1.6l.6-.8-1-1.7z"/></svg></span><span class="tt"><b>واتساب</b><span>01228855105</span></span></a>
 <a class="tile" href="https://wa.me/201009934519" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.5 9.5c.3 2 2 3.7 4 4l1.2-1.2-1.7-1-.8.6c-.7-.3-1.3-.9-1.6-1.6l.6-.8-1-1.7z"/></svg></span><span class="tt"><b>واتساب</b><span>01009934519</span></span></a>
 <a class="tile wide row" href="tel:01009934519"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span class="tt"><b>اتصل بنا</b><span>01009934519</span></span><svg class="ar" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></a>
-<a class="tile wide row gold" id="rv" href="#" target="_blank" rel="noopener" hidden><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.8z"/></svg></span><span class="tt"><b>قيّمنا على جوجل</b><span class="t">رأيك يفرق معانا</span></span><svg class="ar" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></a>
+<a class="tile wide row gold" id="rv" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.8z"/></svg></span><span class="tt"><b>قيّمنا على جوجل</b><span class="t">رأيك يفرق معانا</span></span><svg class="ar" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></a>
 <a class="tile wide row map" href="https://maps.app.goo.gl/9tm8z3fPvrWPwrwA9" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.5 6-10.5a6 6 0 0 0-12 0C6 15.5 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg></span><span class="tt"><b>الموقع</b><span class="t">الخصوص _ شارع الجسر الغربي _ بجوار بنزينة الخصوص</span></span><svg class="ar" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></a>
 </div>
 
@@ -177,7 +177,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--g2);outline-offset:
 <script>
 (function(){
 var REVIEW_URL='https://search.google.com/local/writereview?placeid=ChIJlclRKgAVWBQRolLmKl3vIIw';
-var rv=document.getElementById('rv');if(REVIEW_URL&&rv){rv.href=REVIEW_URL;rv.hidden=false}
+var rv=document.getElementById('rv');if(REVIEW_URL&&rv){rv.href=REVIEW_URL;}
 
 // Wallet Dropdown Toggle
 var toggle=document.getElementById('walletToggle');
